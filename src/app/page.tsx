@@ -17,6 +17,7 @@ export default function Home() {
             personalities of the past and provide the visitor with a connection
             through the lens of their MBTI personality type.
           </p>
+          <a href="/subject" className="flex justify-center px-4 w-full max-w-32 py-2 text-white duration-150 bg-boston-blue-600 rounded-lg hover:bg-boston-blue-500 active:bg-boston-blue-700 md:text-sm capitalize font-bold" >subject</a>
         </div>
       </main>
     </div>
