@@ -32,11 +32,8 @@ export default function TextArea({
       </label>
       <textarea
         id={name}
-        className={`resize-none w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 
-          focus:ring-boston-blue-600 focus:border-boston-blue-600 dark:border-2 dark:border-gray-700 
-          dark:text-white flex-1 min-w-[200px]
+        className={`resize-none p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-boston-blue-600 focus:border-boston-blue-600 dark:border-2 dark:border-gray-700 dark:text-white min-w-[420px] [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none
             ${isDisabled ? "dark:bg-gray-700/70" : "dark:bg-gray-700/20"}
-            [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none
         `}
         rows={rows}
         name={name}
@@ -45,7 +42,7 @@ export default function TextArea({
         required={isRequired}
         disabled={isDisabled}
         aria-describedby="helper-text-explanation"
-        appearance-none
+        appearance-none="none"
         onChange={onChange}
       />
     </div>

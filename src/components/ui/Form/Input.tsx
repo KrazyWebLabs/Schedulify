@@ -41,7 +41,7 @@ export default function FormInput({
         required={isRequired}
         disabled={isDisabled}
         aria-describedby="helper-text-explanation"
-        appearance-none
+        appearance-none="none"
         step="any"
         onChange={onChange}
         className={`w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 

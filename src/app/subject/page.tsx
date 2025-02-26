@@ -34,7 +34,6 @@ export default function Subject() {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
-    console.log(name, value);
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
@@ -43,12 +42,13 @@ export default function Subject() {
     console.log("Datos guardados:", formData);
   };
   return (
-    <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-      <div className="flex mx-auto px-4 md:px-8 justify-center items-center flex-col">
-        <Form title="Registro de Materia" onSubmit={handleSubmit}>
+    <div className="flex min-h-screen px-4 md:px-8 justify-center items-center ">
+      <Form title="Registro de Materia" onSubmit={handleSubmit}>
+        <div className="flex flex-wrap gap-4">
           <FormInput title="ID Materia" name="idSubject" type="text" placeholder="ISF12302" isRequired onChange={handleChange}/>
           <FormInput title="Nombre Materia" name="subjectName" type="text" placeholder="Videojuegos I" isRequired onChange={handleChange}/>
-          <TextArea title="Descripción" name="subjectDesc" placeholder="Creación de el desarrollo de historia de un videojuego" isRequired rows={2} onChange={handleChange} />
+        </div>
+        <div className="flex flex-wrap gap-4">
           <FormSelect title="Seleccionar carrera" name="idMajor" isRequired onChange={handleChange}>
             {
               carreras.map((carrera) => (
@@ -57,12 +57,13 @@ export default function Subject() {
             }
           </FormSelect>
           <FormInput title="Número de contactos" name="contactsNo" type="number" placeholder="5" isRequired onChange={handleChange}/>
-          <SubmitBtn>
-            Add
-          </SubmitBtn>
-          <BackBtn />
-        </Form>
-      </div>
-    </main>
+        </div>
+        <TextArea title="Descripción" name="subjectDesc" placeholder="Creación de el desarrollo de historia de un videojuego" isRequired rows={4} onChange={handleChange} />
+        <SubmitBtn>
+          Add
+        </SubmitBtn>
+        <BackBtn />
+      </Form>
+    </div>
   );
 }
