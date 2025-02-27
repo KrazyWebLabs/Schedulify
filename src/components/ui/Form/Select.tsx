@@ -13,7 +13,7 @@ export default function FormSelect({
   isDisabled,
   isRequired,
   children,
-  onChange
+  onChange,
 }: InputProps) {
   return (
     <div className="flex-1 min-w-[200px] mb-4">
@@ -32,7 +32,7 @@ export default function FormSelect({
         disabled={isDisabled}
         onChange={onChange}
         className={`w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 
-          focus:ring-LegacyBlue-600 focus:border-LegacyBlue-600 dark:border-2 dark:border-gray-700 
+          focus:ring-boston-blue-600 focus:border-boston-blue-600 dark:border-2 dark:border-gray-700 
           dark:text-white ${
             isDisabled ? "dark:bg-gray-700/70" : "dark:bg-gray-700/20"
           }`}
@@ -40,5 +40,5 @@ export default function FormSelect({
         {children}
       </select>
     </div>
-  )
+  );
 }

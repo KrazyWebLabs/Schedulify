@@ -1,69 +1,53 @@
 "use client";
-import BackBtn from "@/components/buttons/BackBtn";
-import SubmitBtn from "@/components/buttons/SubmitBtn";
-import Form from "@/components/ui/Form/Form";
-import FormInput from "@/components/ui/Form/Input";
-import FormSelect from "@/components/ui/Form/Select";
-import SelectOption from "@/components/ui/Form/SelectOption";
-import TextArea from "@/components/ui/Form/TextArea";
-import { useState } from "react";
 
-const carreras: { id: number, name: string }[] = [
+import DeleteBtn from "@/components/ui/Buttons/DeleteBtn";
+import EditRecord from "@/components/ui/Buttons/EditRecord";
+import Table from "@/components/ui/Table/Table";
+import TableData from "@/components/ui/Table/TableData";
+import { useEffect, useRef } from "react";
+
+const subjects: { id: number, name: string, desc:string, idMajor:number }[] = [
   {
     id: 1,
-    name: "Ingeniería en Software"
+    name: "Videojuegos I",
+    desc: "Introducción a la creación de videojuegos",
+    idMajor: 1
   },
-  {
-    id: 2,
-    name: "Ingeniería Mecatronica"
-  },
-  {
-    id: 3,
-    name: "Ingeniería Industrial"
-  }
 ]
 
-export default function Subject() {
-  const [formData, setFormData] = useState({
-    idSubject: "",
-    subjectName: "",
-    subjectDesc: "",
-    idMajor: "",
-    contactsNo: ""
-  });
+const headers = ["Nombre", "Descripción", "ID-Carrera", ""]
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
+export default function SubjectsList() {
+  const savedData = useRef(subjects);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log("Datos guardados:", formData);
-  };
+  useEffect(() => {
+    savedData.current = JSON.parse(localStorage.getItem("formData") || JSON.stringify(subjects));
+    console.log("effect:", savedData.current);
+  }, []);
+
+  console.log("Saved Data:", savedData.current);
   return (
-    <div className="flex min-h-screen px-4 md:px-8 justify-center items-center ">
-      <Form title="Registro de Materia" onSubmit={handleSubmit}>
-        <div className="flex flex-wrap gap-4">
-          <FormInput title="ID Materia" name="idSubject" type="text" placeholder="ISF12302" isRequired onChange={handleChange}/>
-          <FormInput title="Nombre Materia" name="subjectName" type="text" placeholder="Videojuegos I" isRequired onChange={handleChange}/>
-        </div>
-        <div className="flex flex-wrap gap-4">
-          <FormSelect title="Seleccionar carrera" name="idMajor" isRequired onChange={handleChange}>
-            {
-              carreras.map((carrera) => (
-                <SelectOption key={carrera.id} value={`${carrera.id}`} >{carrera.name}</SelectOption>
-              ))
-            }
-          </FormSelect>
-          <FormInput title="Número de contactos" name="contactsNo" type="number" placeholder="5" isRequired onChange={handleChange}/>
-        </div>
-        <TextArea title="Descripción" name="subjectDesc" placeholder="Creación de el desarrollo de historia de un videojuego" isRequired rows={4} onChange={handleChange} />
-        <SubmitBtn>
-          Add
-        </SubmitBtn>
-        <BackBtn />
-      </Form>
-    </div>
-  );
+    <Table title="Materias" headers={headers}>
+      {savedData.current.map((s) => (
+          <tr key={s.id}>
+            
+            <TableData>
+              {s.name}
+            </TableData>
+            <TableData>
+              {s.desc}
+            </TableData>
+            <TableData>
+              {s.idMajor}
+            </TableData>
+
+            <td className="flex items-center justify-center gap-4 m-2 text-right px-6 whitespace-nowrap">
+              <EditRecord href={`/${s.id}`}/>
+
+              <DeleteBtn href="/pepeDeletea"/>
+            </td>
+          </tr>
+        ))}
+    </Table>
+  )
 }
