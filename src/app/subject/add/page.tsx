@@ -43,7 +43,7 @@ export default function Subject() {
     localStorage.setItem("formData", JSON.stringify(formData));
   };
   return (
-    <div className="flex min-h-screen px-4 md:px-8 justify-center items-center ">
+    <div className="flex min-h-screen px-4 md:px-8 justify-center items-center">
       <Form title="Registro de Materia" onSubmit={handleSubmit}>
         <div className="flex flex-wrap gap-4">
           <FormInput title="ID Materia" name="idSubject" type="text" placeholder="ISF12302" isRequired onChange={handleChange}/>
