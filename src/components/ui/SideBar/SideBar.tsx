@@ -2,6 +2,7 @@ import Divider from "@/components/Divider";
 import SubjectIcon from "../icons/SubjectIcon";
 import ClassroomIcon from "../icons/ClassroomIcon";
 import SideBarLink from "./SideBarLink";
+import PeriodIcon from "../icons/PeriodIcon";
 
 import TeacherIcon from "../icons/TeacherIcon";
 
@@ -19,6 +20,9 @@ export default function SideBar() {
 
           <SideBarLink href="/teacher" icon={<TeacherIcon />}>
             Maestros
+          </SideBarLink>          
+          <SideBarLink href="/periods" icon={<PeriodIcon />}>
+            Periodos
           </SideBarLink>
 
           <Divider />
