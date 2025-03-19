@@ -32,7 +32,9 @@ export default function RootLayout({
       >
         <SideBar />
         <main className="flex-1 p-6 flex flex-col ">
-          <Image src="umad.svg" alt="Logo UMAD" width={120} height={10}/>
+          <Image
+          className="dark:invert"
+           src="umad.svg" alt="Logo UMAD" width={120} height={10}/>
           <Breadcrumb />
           {children}
         </main>
