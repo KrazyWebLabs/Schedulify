@@ -29,7 +29,7 @@ export default function Subject() {
     subjectName: "",
     subjectDesc: "",
     idMajor: "",
-    contactsNo: ""
+    plugsNo: ""
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -43,7 +43,7 @@ export default function Subject() {
     localStorage.setItem("formData", JSON.stringify(formData));
   };
   return (
-    <div className="flex min-h-screen px-4 md:px-8 justify-center items-center">
+    <div className="flex h-full px-4 md:px-8 justify-center items-center">
       <Form title="Registro de Materia" onSubmit={handleSubmit}>
         <div className="flex flex-wrap gap-4">
           <FormInput title="ID Materia" name="idSubject" type="text" placeholder="ISF12302" isRequired onChange={handleChange}/>
@@ -57,7 +57,7 @@ export default function Subject() {
               ))
             }
           </FormSelect>
-          <FormInput title="Número de contactos" name="contactsNo" type="number" placeholder="5" isRequired onChange={handleChange}/>
+          <FormInput title="Número de enchufes" name="plugsNo" type="number" placeholder="5" isRequired onChange={handleChange}/>
         </div>
         <TextArea title="Descripción" name="subjectDesc" placeholder="Creación de el desarrollo de historia de un videojuego" isRequired rows={4} onChange={handleChange} />
         <SubmitBtn>

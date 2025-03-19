@@ -5,16 +5,15 @@ import EditRecord from "@/components/ui/Buttons/EditRecord";
 import Table from "@/components/ui/Table/Table";
 import TableData from "@/components/ui/Table/TableData";
 
-const subjects: { id: number, name: string, desc:string, idMajor:number }[] = [
+const subjects: { idClassroom: string, capacity: number, plugsNumber: number }[] = [
   {
-    id: 1,
-    name: "Videojuegos I",
-    desc: "Introducción a la creación de videojuegos",
-    idMajor: 1
+    idClassroom: "A101",
+    capacity: 123,
+    plugsNumber: 312
   },
 ]
 
-const headers = ["Nombre", "Descripción", "ID-Carrera", ""]
+const headers = ["ID Salón", "Capacidad de alumnos", "No. enchufes", ""]
 
 export default function SubjectsList() {
 
@@ -22,20 +21,20 @@ export default function SubjectsList() {
     <div className="flex flex-col h-full  min-w-screen px-4 py-8 md:px-8">
       <Table title="Materias" headers={headers}>
         {subjects.map((s) => (
-            <tr key={s.id}>
+            <tr key={s.idClassroom}>
               
-              <TableData>
-                {s.name}
+              <TableData isID={true}>
+                {s.idClassroom}
               </TableData>
               <TableData>
-                {s.desc}
+                {s.capacity}
               </TableData>
               <TableData>
-                {s.idMajor}
+                {s.plugsNumber}
               </TableData>
 
               <td className="flex items-center justify-center gap-4 m-2 text-right px-6 whitespace-nowrap">
-                <EditRecord href={`/${s.id}`}/>
+                <EditRecord href={`${s.idClassroom}`}/>
 
                 <DeleteBtn href="/pepeDeletea"/>
               </td>

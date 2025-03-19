@@ -5,33 +5,39 @@ import EditRecord from "@/components/ui/Buttons/EditRecord";
 import Table from "@/components/ui/Table/Table";
 import TableData from "@/components/ui/Table/TableData";
 
-const subjects: { id: number, name: string, desc:string, idMajor:number }[] = [
+const teachers: { id: number, name: string, disponibility:string }[] = [
   {
     id: 1,
-    name: "Videojuegos I",
-    desc: "Introducción a la creación de videojuegos",
-    idMajor: 1
+    name: "Nicolas Arrioja",
+    disponibility: "Virtual"
+  },
+  {
+    id: 2,
+    name: "Veronica",
+    disponibility: "Presencial/Vitual"
+  },
+  {
+    id: 3,
+    name: "Patricia",
+    disponibility: "Presencial"
   },
 ]
 
-const headers = ["Nombre", "Descripción", "ID-Carrera", ""]
+const headers = ["Nombre", "Disponibilidad", ""]
 
 export default function SubjectsList() {
 
   return (
-    <div className="flex flex-col h-full  min-w-screen px-4 py-8 md:px-8">
-      <Table title="Materias" headers={headers}>
-        {subjects.map((s) => (
+    <div className="flex flex-col min-h-screen  min-w-screen px-4 py-8 md:px-8">
+      <Table title="Maestros" headers={headers}>
+        {teachers.map((s) => (
             <tr key={s.id}>
               
               <TableData>
                 {s.name}
               </TableData>
               <TableData>
-                {s.desc}
-              </TableData>
-              <TableData>
-                {s.idMajor}
+                {s.disponibility}
               </TableData>
 
               <td className="flex items-center justify-center gap-4 m-2 text-right px-6 whitespace-nowrap">
