@@ -19,7 +19,7 @@ const headers = ["Nombre", "Descripción", "ID-Carrera", ""]
 export default function SubjectsList() {
 
   return (
-    <div className="flex flex-col min-h-screen  min-w-screen px-4 py-8 md:px-8">
+    <div className="flex flex-col h-full  min-w-screen px-4 py-8 md:px-8">
       <Table title="Materias" headers={headers}>
         {subjects.map((s) => (
             <tr key={s.id}>
