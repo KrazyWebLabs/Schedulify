@@ -1,5 +1,6 @@
 import Divider from "@/components/Divider";
 import SubjectIcon from "../icons/SubjectIcon";
+import TeacherIcon from '../icons/TeacherIcon';
 import SideBarLink from "./SideBarLink";
 
 export default function SideBar() {
@@ -9,6 +10,9 @@ export default function SideBar() {
         <nav>
           <SideBarLink href="/subject" icon={<SubjectIcon />}>
             Materias
+          </SideBarLink>
+          <SideBarLink href="/teacher" icon={<TeacherIcon />}>
+            Maestros
           </SideBarLink>
 
           <Divider />
