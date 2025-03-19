@@ -2,6 +2,7 @@ import Divider from "@/components/Divider";
 import SubjectIcon from "../icons/SubjectIcon";
 import ClassroomIcon from "../icons/ClassroomIcon";
 import SideBarLink from "./SideBarLink";
+import MajorIcon from "../icons/MajorIcon";
 
 import TeacherIcon from "../icons/TeacherIcon";
 
@@ -15,6 +16,9 @@ export default function SideBar() {
           </SideBarLink>
           <SideBarLink href="/classroom" icon={<ClassroomIcon />}>
             Salones
+          </SideBarLink>
+          <SideBarLink href="/major" icon={<MajorIcon />}>
+            Carrera
           </SideBarLink>
 
           <SideBarLink href="/teacher" icon={<TeacherIcon />}>
