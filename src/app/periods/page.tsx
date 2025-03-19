@@ -9,22 +9,22 @@ const periods: { id: number, name: string, desc:string }[] = [
   {
     id: 1,
     name: "Primavera 2024",
-    desc: "Periodo de primavera 2024 de 17 de Enero al 17 de Mayo",
+    desc: "Periodo de primavera 2024 del 17 de Enero al 17 de Mayo",
   },  
   {
     id: 2,
     name: "Verano 2024",
-    desc: "Periodo de verano 2024 de 10 de Junio al 14 de Julio",
+    desc: "Periodo de verano 2024 del 10 de Junio al 14 de Julio",
   },  
   {
     id: 3,
     name: "Otoño 2024",
-    desc: "Periodo de otoño 2024 de 21 de Agosto al 9 de Diciembre",
+    desc: "Periodo de otoño 2024 del 21 de Agosto al 9 de Diciembre",
   },  
   {
     id: 4,
     name: "Primavera 2025",
-    desc: "Periodo de Primavera 2025 de 20 de Enero al 25 de Mayo",
+    desc: "Periodo de Primavera 2025 del 20 de Enero al 25 de Mayo",
   },
 ]
 
