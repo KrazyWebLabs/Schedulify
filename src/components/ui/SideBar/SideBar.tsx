@@ -1,6 +1,10 @@
 import Divider from "@/components/Divider";
 import SubjectIcon from "../icons/SubjectIcon";
+<<<<<<< HEAD
+import TeacherIcon from '../icons/TeacherIcon';
+=======
 import ClassroomIcon from "../icons/ClassroomIcon";
+>>>>>>> 4320a84673957c99d4b5691f59d6481928fc12dd
 import SideBarLink from "./SideBarLink";
 
 export default function SideBar() {
@@ -11,8 +15,13 @@ export default function SideBar() {
           <SideBarLink href="/subject" icon={<SubjectIcon />}>
             Materias
           </SideBarLink>
+<<<<<<< HEAD
+          <SideBarLink href="/teacher" icon={<TeacherIcon />}>
+            Maestros
+=======
           <SideBarLink href="/classroom" icon={<ClassroomIcon />}>
             Salones
+>>>>>>> 4320a84673957c99d4b5691f59d6481928fc12dd
           </SideBarLink>
 
           <Divider />
