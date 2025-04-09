@@ -6,12 +6,17 @@ import MajorIcon from "../icons/MajorIcon";
 import PeriodIcon from "../icons/PeriodIcon";
 
 import TeacherIcon from "../icons/TeacherIcon";
+import HomeIcon from "../icons/HomeIcon";
 
 export default function SideBar() {
   return (
     <aside className="flex flex-col w-64 h-screen p-4 border-r dark:border-gray-700 z-20 backdrop-blur-xl">
       <div className="flex flex-col justify-between flex-1">
         <nav>
+          <SideBarLink href="/" icon={<HomeIcon/>}>
+            Inicio
+          </SideBarLink>
+          <Divider/>
           <SideBarLink href="/subject" icon={<SubjectIcon />}>
             Materias
           </SideBarLink>
