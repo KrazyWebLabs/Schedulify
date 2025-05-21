@@ -5,7 +5,7 @@ interface InputProps {
   children: React.ReactNode;
 }
 
-export default function FormSelect({
+export default function FormSelectOption({
   value,
   label,
   isSelected,

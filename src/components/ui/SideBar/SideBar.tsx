@@ -10,13 +10,20 @@ import HomeIcon from "../icons/HomeIcon";
 
 export default function SideBar() {
   return (
-    <aside className="flex flex-col w-64 h-screen p-4 border-r dark:border-gray-700 z-20 backdrop-blur-xl">
+    <aside 
+    className="flex flex-col w-64 h-screen p-4 border-r dark:border-gray-700 z-20 backdrop-blur-xl fixed">
       <div className="flex flex-col justify-between flex-1">
         <nav>
           <SideBarLink href="/" icon={<HomeIcon/>}>
             Inicio
           </SideBarLink>
           <Divider/>
+          <span className="flex w-full justify-center font-bold dark:text-gray-300 text-gray-700">
+            Crear un horario
+          </span>
+          <SideBarLink href="/schedule" icon={<SubjectIcon />}>
+            Horarios
+          </SideBarLink>
           <SideBarLink href="/subject" icon={<SubjectIcon />}>
             Materias
           </SideBarLink>
@@ -27,21 +34,14 @@ export default function SideBar() {
             Carrera
           </SideBarLink>
 
+          <Divider />
           <SideBarLink href="/teacher" icon={<TeacherIcon />}>
             Maestros
           </SideBarLink>          
           <SideBarLink href="/periods" icon={<PeriodIcon />}>
             Periodos
           </SideBarLink>
-
-          <Divider />
         </nav>
-        <a
-          href="/login"
-          className="flex items-center justify-center m-4 rounded-lg border-2 border-boston-blue-600 hover:border-boston-blue-800 hover:bg-boston-blue-600 duration-150 hover:text-white font-medium text-gray-800 dark:text-gray-200 py-2"
-        >
-          Log in
-        </a>
       </div>
     </aside>
   );

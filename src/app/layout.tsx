@@ -31,7 +31,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased flex bg-gray-100 dark:bg-gray-900 min-h-screen bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] dark:bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')]`}
       >
         <SideBar />
-        <main className="flex-1 p-6 flex flex-col ">
+        <main className="flex-1 p-6 flex flex-col ml-[255px]">
           <Image
           priority={true}
           className="dark:invert"

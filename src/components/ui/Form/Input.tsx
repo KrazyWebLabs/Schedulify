@@ -24,7 +24,7 @@ export default function FormInput({
   onChange
 }: InputProps) {
   return (
-    <div className="flex-1 mb-4">
+    <div className="flex-1 mb-4 w-full">
       <label
         htmlFor={name}
         className="block text-sm dark:text-white font-medium mb-1 capitalize"
