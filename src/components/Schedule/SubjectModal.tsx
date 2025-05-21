@@ -3,6 +3,8 @@ import { useState } from "react";
 import type React from "react";
 import FormSelect from "../ui/Form/Select";
 import FormSelectOption from "../ui/Form/SelectOption";
+import { useDispatch } from "react-redux";
+import { addSubject } from "@/Redux/Schedule/scheduleSlice";
 
 export default function ScheduleSubjectModal() {
   const [scheduleItems, setScheduleItems] = useState<{ time: string }[]>([]);
@@ -56,7 +58,26 @@ export default function ScheduleSubjectModal() {
     setScheduleItems(newItems);
   };
 
-  const handleSubmit = () => {};
+  const dispatch = useDispatch();
+
+  const handleSubmit = () => {
+    if (
+      formData.subject &&
+      formData.teacher &&
+      formData.classroom &&
+      scheduleItems.length > 0
+    ) {
+      dispatch(
+        addSubject({
+          subject: formData.subject,
+          teacher: formData.teacher,
+          classroom: formData.classroom,
+          schedules: scheduleItems.map((item) => item.time),
+        })
+      );
+      // Aquí puedes cerrar el modal y limpiar el formulario si quieres
+    }
+  };
 
   return (
     <div className="w-[500px] mx-auto border rounded-3xl p-8 dark:bg-gray-900 bg-white">

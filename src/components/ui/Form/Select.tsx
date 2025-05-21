@@ -16,7 +16,7 @@ export default function FormSelect({
   onChange,
 }: InputProps) {
   return (
-    <div className="flex-1 min-w-[200px] mb-4">
+    <div className="flex-1 min-w-[200px] mb-4 w-full">
       <label
         htmlFor={name}
         className="block text-sm dark:text-white font-medium mb-1 capitalize"
